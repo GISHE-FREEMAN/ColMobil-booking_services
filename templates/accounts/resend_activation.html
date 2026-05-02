@@ -1,0 +1,16 @@
+<h2>Resend Activation Email</h2>
+
+{% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <br>
+
+    <button type="submit">Resend Email</button>
+</form>
